@@ -81,7 +81,23 @@ const imagesCartTemplate = images.map(el =>
 const galleryList = document.querySelector('.gallery');
 galleryList.innerHTML = imagesCartTemplate;
 
-galleryList.addEventListener('click', (event) => {
-    event.preventDefault();
-    console.log(event.target.dataset.source);
-})
+galleryList.addEventListener('click', event => {
+  event.preventDefault();
+
+  if (event.target.nodeName !== 'IMG') {
+    return;
+  };
+  const imageSource = event.target.dataset.source;
+
+  const instance = basicLightbox.create(`
+        <img src="${imageSource}" width="1112" height="640">
+    `);
+
+  instance.show();
+});
+
+
+
+
+
+
