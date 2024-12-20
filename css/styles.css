@@ -7,11 +7,15 @@ ul{
 img{
     width: 360px;
     height: 200px;
+    
+    cursor: pointer;
 
     }
+
 .gallery-container{
     width: 1128px;
     margin: 0 auto;
+   
     
 }
 .gallery{
@@ -22,4 +26,13 @@ img{
 }
 .gallery-item{
     width: calc((100% - 48px) / 3);
+}
+.gallery-image {
+    transition: transform 0.3s ease;
+   
+}
+
+.gallery-image:hover {
+    transform: scale(1.1);
+   
 }
